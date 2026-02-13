@@ -31,8 +31,11 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 
 
+https://github.com/user-attachments/assets/ce719d6c-51b5-456d-8ed3-e9ae25af693c
 
-https://github.com/user-attachments/assets/281a7d6f-2acc-4ae8-8ee2-95ed232de2fd
+
+
+
 
 
 
