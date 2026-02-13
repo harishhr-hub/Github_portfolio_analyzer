@@ -30,4 +30,8 @@ AI-powered GitHub profile analyzer that evaluates:
 pip install -r requirements.txt
 uvicorn main:app --reload
 
-![This is a working video](https://github.com/user-attachments/assets/3b56b008-9fe9-476f-b390-f456df66155f)
+
+
+https://github.com/user-attachments/assets/34a69376-806e-4e6d-8cb8-e49baec83bc1
+
+
