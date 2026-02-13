@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GitHub Portfolio Analyzer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        form {
+            margin-bottom: 40px;
+            display: flex;
+            gap: 10px;
+        }
+
+        input {
+            padding: 12px 15px;
+            width: 320px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            background: #111;
+            color: white;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background: #333;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            width: 80%;
+            max-width: 900px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .score-circle {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            font-size: 24px;
+            font-weight: bold;
+            background: rgba(255,255,255,0.2);
+        }
+
+        ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .strengths li {
+            color: #00ffcc;
+        }
+
+        .suggestions li {
+            color: #ffb3b3;
+        }
+
+        .summary-box {
+            white-space: pre-line;
+            background: rgba(0,0,0,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        img {
+            margin-top: 15px;
+            border-radius: 10px;
+            background: white;
+            padding: 10px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 13px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🚀 GitHub Portfolio Analyzer</h1>
+
+<form method="post" action="/analyze">
+    <input type="text" name="github_url" placeholder="Enter GitHub Profile URL" required>
+    <button type="submit">Analyze</button>
+</form>
+
+{% if error %}
+<div class="card">
+    <p style="color:#ffdddd;">{{ error }}</p>
+</div>
+{% endif %}
+
+{% if score %}
+<div class="card">
+    <h2 style="text-align:center;">Portfolio Overview</h2>
+
+    <div class="score-circle"
+         style="background: conic-gradient(#00ffcc {{ score * 3.6 }}deg, rgba(255,255,255,0.2) 0deg);">
+        {{ score }}/100
+    </div>
+
+    <p style="text-align:center;">Profile: <strong>{{ username }}</strong></p>
+</div>
+
+<div class="card">
+    <h3>✅ Strengths</h3>
+    <ul class="strengths">
+        {% for s in strengths %}
+        <li>{{ s }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="card">
+    <h3>⚠ Improvement Suggestions</h3>
+    <ul class="suggestions">
+        {% for sug in suggestions %}
+        <li>{{ sug }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% if ai_summary %}
+<div class="card">
+    <h3>🤖 AI Recruiter Evaluation</h3>
+    <div class="summary-box">
+        {{ ai_summary }}
+    </div>
+</div>
+{% endif %}
+
+{% if show_charts %}
+<div class="card">
+    <h3>📊 Language Distribution</h3>
+    <img src="/static/language_chart.png" width="400">
+</div>
+
+<div class="card">
+    <h3>📈 Commit Activity</h3>
+    <img src="/static/commit_chart.png" width="500">
+</div>
+{% endif %}
+
+{% endif %}
+
+<div class="footer">
+    Built with ❤️ for Hackathon Excellence
+</div>
+
+</body>
+</html>
