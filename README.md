@@ -26,12 +26,8 @@ AI-powered GitHub profile analyzer that evaluates:
 
 ## 🚀 Run Locally
 
-
-https://github.com/user-attachments/assets/3b56b008-9fe9-476f-b390-f456df66155f
-
-
 ```bash
 pip install -r requirements.txt
 uvicorn main:app --reload
 
-![This is a working video](https://github.com/harishhr-hub/Github_portfolio_analyzer/blob/d9262481aebc8f9e2e3e118942d54b5a5e6a18a5/Recording%202026-02-13%20201802.mp4)
+![This is a working video](https://github.com/user-attachments/assets/3b56b008-9fe9-476f-b390-f456df66155f)
