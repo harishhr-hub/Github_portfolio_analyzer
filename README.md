@@ -26,6 +26,10 @@ AI-powered GitHub profile analyzer that evaluates:
 
 ## 🚀 Run Locally
 
+
+https://github.com/user-attachments/assets/3b56b008-9fe9-476f-b390-f456df66155f
+
+
 ```bash
 pip install -r requirements.txt
 uvicorn main:app --reload
