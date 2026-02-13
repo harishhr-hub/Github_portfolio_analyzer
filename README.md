@@ -24,14 +24,16 @@ AI-powered GitHub profile analyzer that evaluates:
 - Performance optimized backend
 - In-memory caching
 
+
+
+https://github.com/user-attachments/assets/3f687b7d-dbfb-418a-a6be-6d042711c881
+
+
 ## 🚀 Run Locally
 
 ```bash
 pip install -r requirements.txt
 uvicorn main:app --reload
-
-![Video](https://github.com/harishhr-hub/Github_portfolio_analyzer/blob/c4512614950bc2daa31d7c4aad8876da7e78a799/Recording%202026-02-13%20201802.mp4)
-
 
 
 
