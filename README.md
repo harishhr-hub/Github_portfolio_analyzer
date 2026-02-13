@@ -32,6 +32,9 @@ uvicorn main:app --reload
 
 
 
-https://github.com/user-attachments/assets/34a69376-806e-4e6d-8cb8-e49baec83bc1
+https://github.com/user-attachments/assets/281a7d6f-2acc-4ae8-8ee2-95ed232de2fd
+
+
+
 
 
